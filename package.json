@@ -1,0 +1,49 @@
+{
+  "name": "microfrontend-module-loading",
+  "version": "1.0.0",
+  "description": "Examples showing different module loaders for microfrontends",
+  "scripts": {
+    "build": "webpack --mode development",
+    "build-hi": "webpack --mode development --config ./native-modules/hi.webpack.config.js",
+    "watch-webpack": "webpack --watch --mode development",
+    "watch-rollup": "rollup -cw",
+    "format": "prettier --write .",
+    "start": "concurrently -n 'serve,watch-webpack,watch-rollup' 'serve .' npm:watch-webpack npm:watch-rollup",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/single-spa-workshop/microfrontend-module-loading.git"
+  },
+  "author": "Joel Denning",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/single-spa-workshop/microfrontend-module-loading/issues"
+  },
+  "homepage": "https://github.com/single-spa-workshop/microfrontend-module-loading#readme",
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-react": "^7.12.10",
+    "@rollup/plugin-babel": "^5.2.2",
+    "babel-loader": "^8.2.2",
+    "bundle-loader": "^0.5.6",
+    "concurrently": "^5.3.0",
+    "html-webpack-plugin": "^4.5.0",
+    "husky": "^4.3.6",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0",
+    "rollup": "^2.35.1",
+    "serve": "^11.3.2",
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0"
+  }
+}

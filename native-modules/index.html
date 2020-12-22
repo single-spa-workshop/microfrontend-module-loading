@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Native Module Loading</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://cdn.jsdelivr.net/npm/@esm-bundle/react/esm/react.development.js",
+          "react-dom": "https://cdn.jsdelivr.net/npm/@esm-bundle/react-dom/esm/react-dom.development.js",
+          "app1": "/native-modules/dist/app1.js",
+          "app2": "/native-modules/dist/app2.js",
+          "styleguide": "/native-modules/dist/styleguide.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app1"></div>
+    <div id="app2"></div>
+    <script>
+      import("app1");
+      import("app2");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SystemJS Module Loading</title>
+    <script type="systemjs-importmap">
+      {
+        "imports": {
+          "react": "https://cdn.jsdelivr.net/npm/@esm-bundle/react/system/react.development.js",
+          "react-dom": "https://cdn.jsdelivr.net/npm/@esm-bundle/react-dom/system/react-dom.development.js",
+          "app1": "/systemjs/dist/app1.js",
+          "app2": "/systemjs/dist/app2.js",
+          "styleguide": "/systemjs/dist/styleguide.js"
+        }
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/system.js"></script>
+  </head>
+  <body>
+    <div id="app1"></div>
+    <div id="app2"></div>
+    <script>
+      System.import("app1");
+      System.import("app2");
+    </script>
+  </body>
+</html>
